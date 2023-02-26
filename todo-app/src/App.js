@@ -1,13 +1,10 @@
 import './App.css';
-import Testing from './components/TestComponent';
+import AppBar from './components/AppBar';
 
 function App() {
   return (
     <>
-      <header className="App-header">
-      </header>
-
-      <Testing />
+      <AppBar />
     </>
   );
 }
