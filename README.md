@@ -46,7 +46,5 @@ This app should keep track of user inputed data of task entries
 
 - Make it mobile with React Native
 
-- Use Canvas API
-
 - Use APIS to utilize different functionality
 
