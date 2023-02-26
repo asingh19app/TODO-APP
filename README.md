@@ -3,20 +3,15 @@
 
 ## Team members
 
-<<<<<<< HEAD
-### Adeshvir
+ Adeshvir
 
-### Stephen 
-=======
-Adeshvir
+ Diego
 
-Diego
+ Stephen 
 
-Andres
+ Andres 
 
-Jason
-
-Stephen
+ Jason
 
 ## Project Description 
 
@@ -52,4 +47,3 @@ This app should keep track of user inputed data of task entries
 - Make it mobile with React Native
 
 - Use APIS to utilize different functionality
->>>>>>> 92f24a42cbdb144ac0611c6e307b14b0f15e613e
