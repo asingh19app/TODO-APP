@@ -1,10 +1,12 @@
 import './App.css';
-import AppBar from './components/AppBar';
+import NavigationBar from './components/NavBar';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
     <>
-      <AppBar />
+      <p>Hello testing</p>
+      <NavigationBar fixed='top'/>
     </>
   );
 }
