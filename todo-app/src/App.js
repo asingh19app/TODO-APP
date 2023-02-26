@@ -1,5 +1,5 @@
 import './App.css';
-import TestComponent from './components/TestComponent';
+import Testing from './components/TestComponent';
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
       </header>
 
-      <TestComponent />
+      <Testing />
     </>
   );
 }
