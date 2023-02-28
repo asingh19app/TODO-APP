@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <p>Hello testing</p>
-      <NavigationBar fixed='top'/>
+      <NavigationBar />
     </>
   );
 }
