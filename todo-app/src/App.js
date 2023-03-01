@@ -1,6 +1,9 @@
 import './App.css';
 import NavigationBar from './components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import React from 'react';
+import { Eventcalendar, getJson, toast } from '@mobiscroll/react';
+import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 import Home from './pages/Home'
 import ContactUs from './pages/ContactUs'
 import Settings from './pages/Settings';
@@ -9,6 +12,7 @@ import ProfilePage from './pages/ProfilePage'
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
 
 function App() {
+
   return (
     <>
       <Router>
