@@ -2,6 +2,8 @@ import React from 'react'
 import { Eventcalendar, getJson, toast } from '@mobiscroll/react';
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 
+import NavigationBar from '../components/NavBar'
+
 export default function Home() {
   
   const [myEvents, setEvents] = React.useState([]);
@@ -25,31 +27,34 @@ export default function Home() {
   }, []);
 
   return (
-    
-    <Eventcalendar 
+    <>
+      <NavigationBar />
       
-      theme="ios" 
-            themeVariant="dark"
-            clickToCreate={true}
-            dragToCreate={true}
-            dragToMove={true}
-            dragToResize={true}
-            eventDelete={true}
-            view={view}
-            onEventClick={onEventClick}
-            data={[{
-        start: new Date(),
-        title: 'Today\'s event'
-    }
-    // ,
-    
-    //  {
-    //     start: new Date(2020, 11, 18, 9, 0),
-    //     end: new Date(2020, 11, 20, 13, 0),
-    //     title: 'Multi day event'
-    // }
-    ]}
-    
-/>
+      <Eventcalendar 
+        
+        theme="ios" 
+              themeVariant="dark"
+              clickToCreate={true}
+              dragToCreate={true}
+              dragToMove={true}
+              dragToResize={true}
+              eventDelete={true}
+              view={view}
+              onEventClick={onEventClick}
+              data={[{
+          start: new Date(),
+          title: 'Today\'s event'
+      }
+      // ,
+      
+      //  {
+      //     start: new Date(2020, 11, 18, 9, 0),
+      //     end: new Date(2020, 11, 20, 13, 0),
+      //     title: 'Multi day event'
+      // }
+      ]}
+      
+  />
+  </>
   )
 }
