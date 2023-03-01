@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react';
 import { Eventcalendar, getJson, toast } from '@mobiscroll/react';
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";
+import Home from './pages/Home'
+
 
 function App() {
 
@@ -31,6 +33,7 @@ function App() {
     <>
       <p>Hello testing</p>
       <NavigationBar />
+      <Home />
 
       <Eventcalendar 
       
