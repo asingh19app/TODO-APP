@@ -18,7 +18,7 @@ function App() {
       <p>Hello testing</p>
       <Router>
         {/* These are to test the links */}
-        <Link to='/settings'>Settings</Link>
+        <Link to='/settings'></Link>
         <Link to='/profilepage'>Profile Page</Link>
         <Link to='/contactus'> Contact Us</Link>
         
