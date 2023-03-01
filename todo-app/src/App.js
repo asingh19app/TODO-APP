@@ -33,21 +33,29 @@ function App() {
       <NavigationBar />
 
       <Eventcalendar 
-      theme="ios" 
-            themeVariant="light"
-            clickToCreate={false}
-            dragToCreate={false}
-            dragToMove={false}
-            dragToResize={false}
-            eventDelete={false}
-            data={myEvents}
-            view={view}
-            onEventClick={onEventClick}
+      
+      // theme="ios" 
+      //       themeVariant="dark"
+      //       clickToCreate={false}
+      //       dragToCreate={false}
+      //       dragToMove={false}
+      //       dragToResize={false}
+      //       eventDelete={false}
+      //       data={myEvents}
+      //       view={view}
+      //       onEventClick={onEventClick}
             
     data={[{
         start: new Date(),
         title: 'Today\'s event'
-    }]}
+    }
+    //,
+    //  {
+    //     start: new Date(2020, 11, 18, 9, 0),
+    //     end: new Date(2020, 11, 20, 13, 0),
+    //     title: 'Multi day event'
+    // }
+    ]}
     
 />
     </>
