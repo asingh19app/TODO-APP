@@ -2,8 +2,6 @@ import React from 'react'
 import { Eventcalendar, getJson, toast } from '@mobiscroll/react';
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 
-import { getJson, toast } from '@mobiscroll/react';
-
 export default function Home() {
   
   const [myEvents, setEvents] = React.useState([]);
