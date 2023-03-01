@@ -1,10 +1,13 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import NavBar from '../components/NavBar'
 
-function AddEvent() {
+export default function AddEvent() {
   return (
-    <Card style={{backgroundColor: 'white', color: 'black'}}>
+    <>
+    <NavBar/>
+    <Card style={{backgroundColor: 'white', color: 'black', padding: '10rem'}}>
       <Card.Body>
         <Card.Title>Add Your Event Here</Card.Title>
         <Card.Text>
@@ -13,22 +16,32 @@ function AddEvent() {
                 Title:
                 <input type = 'text' name = 'title'></input>
             </label>
+            <br/>
+
             <label>
                 Date:
                 <input type = 'date' name = 'date'></input>
             </label>
+            <br/>
+
             <label>
                 Start Time:
                 <input type = 'time' name = 'startTime'></input>
             </label>
+            <br/>
+
             <label>
                 End Time:
                 <input type = 'time' name = 'endTime'></input>
             </label>
+            <br/>
+            
             <label>
                 Category:
                 <input type = 'radio' name = 'category'></input>
             </label>
+            <br/>
+
             <label>
                 Note:
                 <input type = 'textarea' name = 'note'></input>
@@ -38,7 +51,6 @@ function AddEvent() {
         <Button variant='primary'>Submit</Button>
       </Card.Body>
     </Card>
+    </>
   );
 }
-
-export default AddEvent

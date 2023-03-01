@@ -27,6 +27,9 @@ export default function NavBar() {
             <LinkContainer to="/settings">
               <Nav.Link>Settings</Nav.Link>
             </LinkContainer>
+            <LinkContainer to="/addevent">
+              <Nav.Link>Add Event</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>
