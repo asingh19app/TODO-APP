@@ -17,7 +17,7 @@ export default function NavBar() {
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#link">Profile Page</Nav.Link>
             <Nav.Link href='#contactus'>Contact Us</Nav.Link>
-            <Nav.Link href='#settings'>Settings</Nav.Link>
+            <Nav.Link>Settings</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
