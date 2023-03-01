@@ -1,8 +1,8 @@
 import './App.css';
 import NavigationBar from './components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Home from './pages/Home'
-
+import Home from './pages/Home' 
+import ContactUs from './pages/ContactUs';
 
 function App() {
   return (
@@ -10,7 +10,6 @@ function App() {
       <p>Hello testing</p>
       <NavigationBar />
       <Home />
-
     </>
   );
 }
