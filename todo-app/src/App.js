@@ -1,30 +1,23 @@
 import './App.css';
 import NavigationBar from './components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css'
-<<<<<<< HEAD
 import Home from './pages/Home' 
 import ContactUs from './pages/ContactUs';
-=======
 import React from 'react';
 import { Eventcalendar, getJson, toast } from '@mobiscroll/react';
 import "@mobiscroll/react/dist/css/mobiscroll.min.css";
-import Home from './pages/Home'
-import ContactUs from './pages/ContactUs'
 import Settings from './pages/Settings';
 import ProfilePage from './pages/ProfilePage'
-
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
->>>>>>> refs/remotes/origin/development
+
 
 function App() {
 
   return (
     <>
-<<<<<<< HEAD
       <p>Hello testing</p>
       <NavigationBar />
       <Home />
-=======
       <Router>
         <NavigationBar />
         {/* These are to test the links */}
@@ -39,7 +32,7 @@ function App() {
         <Route path='/profilepage' element={<ContactUs />}/>  
       </Routes>
       </Router>
->>>>>>> refs/remotes/origin/development
+       refs/remotes/origin/development
     </>
   );
 }
