@@ -1,9 +1,9 @@
-const {Form} = require('../models/form');
+const {Forms} = require('../models/form');
 const express = require('express');
 const router = express.Router();
 
 router.get('/', async (req,res) => {
-    const formList = await Form.find()
+    const formList = await Forms.find()
 
     if(!formList) {
         res.status(500).json({succss: flase})
@@ -12,7 +12,7 @@ router.get('/', async (req,res) => {
 })
 
 router.post('/', async (req, res) => {
-    let form = new Form({
+    let form = new Forms({
         title: req.body.title,
         startTime: req.body.startTime,
         endTime: req.body.endTime,
@@ -27,3 +27,4 @@ router.post('/', async (req, res) => {
     res.send(form);
 })
 
+module.exports = router;
