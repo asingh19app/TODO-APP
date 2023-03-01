@@ -16,8 +16,6 @@ function App() {
  return(
   <>
       <p>Hello testing</p>
-      <NavigationBar />
-      <Home />
       <Router>
         {/* These are to test the links */}
         <Link to='/settings'>Settings</Link>
