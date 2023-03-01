@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 //import NavDropdown from 'react-bootstrap/NavDropdown';
 
+import { LinkContainer } from 'react-router-bootstrap';
 
 export default function NavBar() {
   return (
@@ -14,10 +15,18 @@ export default function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="justify-content-end flex-grow-1">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Profile Page</Nav.Link>
-            <Nav.Link href='#contactus'>Contact Us</Nav.Link>
-            <Nav.Link>Settings</Nav.Link>
+            <LinkContainer to='/'>
+              <Nav.Link>Home</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to='/profilepage'>           
+              <Nav.Link>Profile Page</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to='/contactus'>
+              <Nav.Link>Contact Us</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/settings">
+              <Nav.Link>Settings</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>

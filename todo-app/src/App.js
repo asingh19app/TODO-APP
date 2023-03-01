@@ -17,12 +17,6 @@ function App() {
   <>
       <p>Hello testing</p>
       <Router>
-        {/* These are to test the links */}
-        <Link to='/settings'>Settings</Link>
-        <Link to='/profilepage'>Profile Page</Link>
-        <Link to='/contactus'> Contact Us</Link>
-        
-        
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/settings' element={<Settings/>} />
