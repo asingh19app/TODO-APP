@@ -5,7 +5,8 @@ import './styles/mode.css'
 import {Button} from '@mui/material'
 
 export default function Settings() {
-  const [theme, setTheme]  =useState(localStorage.getItem('theme') || 'light')
+  // const [theme, setTheme]  =useState(localStorage.getItem('theme') || 'light')
+  const [theme, setTheme] = useState(localStorage.getItem('theme'))
   const toggleTheme = ()=>{
     if (theme === 'light'){
       setTheme('dark')
@@ -20,11 +21,12 @@ export default function Settings() {
     localStorage.setItem('theme', theme)
     document.body.className =theme
   })
+
   return (
     <div className={`App ${theme}`}>
       <NavBar />
       <h1>Settings</h1>
-      <h2>This button will change you from light mode to dark</h2>
+      <h2>This button will the background from light mode to dark and vice-versa</h2>
       <Button variant='contained' onClick={toggleTheme}>Change Mode</Button>
 
     </div>

@@ -13,11 +13,12 @@ import { useState, useEffect } from 'react';
 
 //Application
 function App() {
+const [theme]  =useState(localStorage.getItem('theme') || 'light')
+
 useEffect(()=>{
   document.body.className =theme
 })
 
-const [theme]  =useState(localStorage.getItem('theme') || 'light')
  return(
   <div className={`App ${theme}`}>
       <Router>  
