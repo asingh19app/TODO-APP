@@ -8,6 +8,7 @@ import React from 'react';
 import Settings from './pages/Settings';
 import ProfilePage from './pages/ProfilePage'
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
+import AddEvent from './pages/AddEvent';
 
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path='/settings' element={<Settings/>} />
         <Route path='/contactus' element={<ContactUs />} />
         <Route path='/profilepage' element={<ProfilePage />}/>  
+        <Route path='/addevent' element={<AddEvent />}/>  
       </Routes>
       </Router>
 
