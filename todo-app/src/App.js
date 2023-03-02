@@ -1,4 +1,4 @@
-import './App.css';
+import './pages/styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Home from './pages/Home' 
 import ContactUs from './pages/ContactUs';

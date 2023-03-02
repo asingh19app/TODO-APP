@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import NavBar from '../components/NavBar';
-import '../form.css'
+import './styles/form.css'
 
 export default function AddEvent() {
   const [title, setTitle] = useState('');
