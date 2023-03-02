@@ -20,11 +20,11 @@ export default function Home() {
       });
   }, []);
   
-  const view = React.useMemo(() => {
-      return {
-          calendar: { labels: true }
-      };
-  }, []);
+    const view = React.useMemo(() => {
+        return {
+            calendar: { popover: true, count: true }
+        };
+    }, []);
 
   return (
     <>
