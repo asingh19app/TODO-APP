@@ -17,10 +17,9 @@ useEffect(()=>{
   document.body.className =theme
 })
 
-const [theme, setTheme]  =useState(localStorage.getItem('theme') || 'light')
+const [theme]  =useState(localStorage.getItem('theme') || 'light')
  return(
   <div className={`App ${theme}`}>
-      <p>Hello testing</p>
       <Router>  
         <Routes>
           <Route path='/' element={<Home />}/>

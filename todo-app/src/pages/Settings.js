@@ -24,7 +24,7 @@ export default function Settings() {
     <div className={`App ${theme}`}>
       <NavBar />
       <h1>Settings</h1>
-      <h2>This button will change you from light mode to dark mode</h2>
+      <h2>This button will change you from light mode to dark</h2>
       <Button variant='contained' onClick={toggleTheme}>Change Mode</Button>
 
     </div>
