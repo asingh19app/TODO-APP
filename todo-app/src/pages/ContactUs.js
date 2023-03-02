@@ -7,6 +7,7 @@ export default function ContactUs() {
   return (
     <>
     <NavBar />
+    <h1>Contact Us</h1>
     <Box
       component="form"
       sx={{

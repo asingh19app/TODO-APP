@@ -9,14 +9,17 @@ import ProfilePage from './pages/ProfilePage'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import AddEvent from './pages/AddEvent';
 
-
-
+import { useState, useEffect } from 'react';
 
 //Application
 function App() {
+useEffect(()=>{
+  document.body.className =theme
+})
 
+const [theme, setTheme]  =useState(localStorage.getItem('theme') || 'light')
  return(
-  <>
+  <div className={`App ${theme}`}>
       <p>Hello testing</p>
       <Router>  
         <Routes>
@@ -28,7 +31,7 @@ function App() {
         </Routes>
       </Router>
 
-    </>
+    </div>
  )
 }
 
