@@ -1,9 +1,12 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import NavBar from '../components/NavBar';
 
 export default function ContactUs() {
   return (
+    <>
+    <NavBar />
     <Box
       component="form"
       sx={{
@@ -62,5 +65,6 @@ export default function ContactUs() {
         />
       </div>
     </Box>
+    </>
   );
     }
