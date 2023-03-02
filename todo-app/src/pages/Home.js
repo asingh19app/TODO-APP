@@ -4,6 +4,13 @@ import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 
 import NavigationBar from '../components/NavBar'
 
+//timezone information
+import moment from 'moment-timezone';
+import { momentTimezone } from '@mobiscroll/react';
+
+// setup Mobiscroll Moment plugin
+momentTimezone.moment = moment;
+
 export default function Home() {
   
   const [myEvents, setEvents] = React.useState([]);
@@ -37,6 +44,9 @@ export default function Home() {
               clickToCreate={true}
               dragToCreate={true}
               dragToMove={true}
+              dataTimezone='utc'
+              displayTimezone='local'
+              timezonePlugin={momentTimezone}
               dragToResize={true}
               eventDelete={true}
               view={view}
