@@ -12,6 +12,8 @@ import AddEvent from './pages/AddEvent';
 
 
 
+
+//Application
 function App() {
 
  return(
@@ -19,7 +21,7 @@ function App() {
       <p>Hello testing</p>
       <Router>
         {/* These are to test the links */}
-        <Link to='/settings'>Settings</Link>
+        <Link to='/settings'></Link>
         <Link to='/profilepage'>Profile Page</Link>
         <Link to='/contactus'> Contact Us</Link>
         
@@ -29,7 +31,7 @@ function App() {
         <Route path='/settings' element={<Settings/>} />
         <Route path='/contactus' element={<ContactUs />} />
         <Route path='/profilepage' element={<ProfilePage />}/>  
-        <Route path='/addevent' element={<AddEvent />}/>  
+        <Route path='/addevent' element={<AddEvent/>}/>  
       </Routes>
       </Router>
 

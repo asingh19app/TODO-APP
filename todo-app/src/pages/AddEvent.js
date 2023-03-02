@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-function AddEvent() {
+export default function AddEvent() {
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
   const [startTime, setStartTime] = useState('');
@@ -63,5 +63,3 @@ function AddEvent() {
     </form>
   );
 }
-
-export default AddEvent
