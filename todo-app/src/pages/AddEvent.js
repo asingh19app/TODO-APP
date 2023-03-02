@@ -35,7 +35,7 @@ export default function AddEvent() {
                 <input type = 'time' name = 'endTime'></input>
             </label>
             <br/>
-            
+
             <label>
                 Category:
                 <input type = 'radio' name = 'category'></input>
