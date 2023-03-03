@@ -27,7 +27,7 @@ export default function Settings() {
       <NavBar />
       <h1>Settings</h1>
       <h2>This button will the background from light mode to dark and vice-versa</h2>
-      <Button variant='contained' onClick={toggleTheme}>Change Mode</Button>
+      <Button variant='contained' onClick={toggleTheme} className='settingBtn'>Change Mode</Button>
 
     </div>
   )
