@@ -52,9 +52,16 @@ export default function ContactUs() {
           defaultValue=""
           variant="filled"
           />
-      </div>
-      <Button variant="contained">Submit</Button>
-    </Box>
-    </div>
+       </div>
+       <Button variant="contained">Contact Support</Button>
+       </Box>
+
+    
+       <h1>Get In Touch</h1>
+       <h1>info@Todoapp.com</h1>
+  
+
+        </div>
+
   );
     }
