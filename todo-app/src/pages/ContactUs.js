@@ -11,7 +11,8 @@ export default function ContactUs() {
   return (
     <div className={`App ${theme}`}>
     <NavBar />
-    <h1>Contact Us</h1>
+    <h1>Get In Touch</h1>
+    <h1>If you have any questions or need help, please fill out the form below. We do our best to respond within 1 business day.</h1>
     <Box
       component="form"
       sx={{
@@ -57,8 +58,7 @@ export default function ContactUs() {
        </Box>
 
     
-       <h1>Get In Touch</h1>
-       <h1>info@Todoapp.com</h1>
+ 
   
 
         </div>
