@@ -10,13 +10,13 @@ export default function AddEvent() {
   const [endTime, setEndTime] = useState('');
   const [category, setCategory] = useState('')
   const [note, setNote] = useState('');
-
+  const [theme] = useState(localStorage.getItem('theme'))
 
   const handleSubmit = (event) => {
     event.preventDefault();
   }
   return (
-    <>
+    <div className={`App ${theme}`}>
     <NavBar/>
     <h1>Add Event Here:</h1>
 <form onSubmit={handleSubmit}>
@@ -57,6 +57,6 @@ export default function AddEvent() {
       <br/>
       <button className = 'submitButton' type="submit">Submit</button>
     </form>
-</>
+</div>
   );
 }

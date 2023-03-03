@@ -4,9 +4,12 @@ import TextField from '@mui/material/TextField';
 import NavBar from '../components/NavBar';
 import Button from '@mui/material/Button'
 
+import { useState } from 'react';
+
 export default function ContactUs() {
+  const [theme] = useState(localStorage.getItem('theme'))
   return (
-    <>
+    <div className={`App ${theme}`}>
     <NavBar />
     <h1>Contact Us</h1>
     <Box
@@ -52,6 +55,6 @@ export default function ContactUs() {
       </div>
       <Button variant="contained">Submit</Button>
     </Box>
-    </>
+    </div>
   );
     }

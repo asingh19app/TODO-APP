@@ -15,12 +15,12 @@ export default function Settings() {
       setTheme('light')
     }
   }
-
+  
   //Use Effect
   useEffect(()=>{
     localStorage.setItem('theme', theme)
     document.body.className =theme
-  })
+  }, [theme])
 
   return (
     <div className={`App ${theme}`}>
