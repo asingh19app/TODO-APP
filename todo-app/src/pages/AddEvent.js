@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from 'react';
 import NavBar from '../components/NavBar';
+<<<<<<< HEAD
 import '../form.css'
 import { useNavigate } from 'react-router-dom'
 
@@ -9,6 +10,18 @@ import { useNavigate } from 'react-router-dom'
 export default function AddEvent() {
 
   const navigate = useNavigate()
+=======
+import './styles/form.css'
+
+export default function AddEvent() {
+  const [title, setTitle] = useState('');
+  const [date, setDate] = useState('');
+  const [startTime, setStartTime] = useState('');
+  const [endTime, setEndTime] = useState('');
+  const [category, setCategory] = useState('')
+  const [note, setNote] = useState('');
+  const [theme] = useState(localStorage.getItem('theme'))
+>>>>>>> development
 
   const [formData, setFormData] = useState({
     title: '',
@@ -40,7 +53,7 @@ export default function AddEvent() {
   }
 
   return (
-    <>
+    <div className={`App ${theme}`}>
     <NavBar/>
     <h1>Add Event Here:</h1>
     <form onSubmit={handleSubmit}>
@@ -76,7 +89,7 @@ export default function AddEvent() {
       <br/>
       <button className = 'submitButton' type="submit">Submit</button>
     </form>
-  </>
+</div>
   );
 }
 
