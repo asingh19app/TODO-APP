@@ -2,6 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import NavBar from '../components/NavBar';
+import Button from '@mui/material/Button'
 
 import { useState } from 'react';
 
@@ -21,53 +22,38 @@ export default function ContactUs() {
     >
       <div>
         <TextField
-          error
-          id="outlined-error"
-          label="Error"
-          defaultValue="Hello World"
-        />
-        <TextField
-          error
-          id="outlined-error-helper-text"
-          label="Error"
-          defaultValue="Hello World"
-          helperText="Incorrect entry."
-        />
-      </div>
-      <div>
-        <TextField
-          error
-          id="filled-error"
-          label="Error"
-          defaultValue="Hello World"
+          required
+          id="filled-required"
+          label="Full Name"
+          defaultValue=""
           variant="filled"
         />
-        <TextField
-          error
-          id="filled-error-helper-text"
-          label="Error"
-          defaultValue="Hello World"
-          helperText="Incorrect entry."
+         <TextField
+          required
+          id="filled-required"
+          label="Email"
+          defaultValue=""
           variant="filled"
         />
       </div>
       <div>
-        <TextField
-          error
-          id="standard-error"
-          label="Error"
-          defaultValue="Hello World"
-          variant="standard"
+      <TextField
+          required
+          id="filled-required"
+          label="Phone Number"
+          defaultValue=""
+          variant="filled"
         />
-        <TextField
-          error
-          id="standard-error-helper-text"
-          label="Error"
-          defaultValue="Hello World"
-          helperText="Incorrect entry."
-          variant="standard"
-        />
+         <TextField
+          id="filled-multiline-static"
+          label="Note:"
+          multiline
+          rows={4}
+          defaultValue=""
+          variant="filled"
+          />
       </div>
+      <Button variant="contained">Submit</Button>
     </Box>
     </div>
   );
