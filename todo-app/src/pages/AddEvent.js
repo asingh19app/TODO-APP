@@ -2,24 +2,13 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from 'react';
 import NavBar from '../components/NavBar';
-<<<<<<< HEAD
 import './styles/form.css'
-
-export default function AddEvent() {
-  const [title, setTitle] = useState('');
-  const [date, setDate] = useState('');
-  const [startTime, setStartTime] = useState('');
-  const [endTime, setEndTime] = useState('');
-  const [category, setCategory] = useState('')
-  const [note, setNote] = useState('');
-  const [theme] = useState(localStorage.getItem('theme'))
-=======
-import '../form.css'
 import { useNavigate } from 'react-router-dom'
 
->>>>>>> origin/Diego
 
-function AddEvent() {
+export default function AddEvent() {
+  console.error()
+  const [theme, setTheme] = useState(localStorage.getItem('theme'))
 
 const navigate = useNavigate()
 
@@ -89,12 +78,6 @@ const navigate = useNavigate()
       <br/>
       <button className = 'submitButton' type="submit">Submit</button>
     </form>
-<<<<<<< HEAD
-</div>
-=======
-  </>
->>>>>>> origin/Diego
+  </div>
   );
 }
-
-export default AddEvent()
