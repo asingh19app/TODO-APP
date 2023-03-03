@@ -11,10 +11,10 @@ export default function AddEvent() {
   const [category, setCategory] = useState('')
   const [note, setNote] = useState('');
 
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
   }
+
   return (
     <>
     <NavBar/>
