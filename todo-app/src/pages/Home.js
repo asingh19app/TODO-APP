@@ -6,7 +6,7 @@ import Calendar from '../components/Calendar'
 
 export default function Home() {
 const [theme] = useState(localStorage.getItem('theme'))
-    
+   
   return (
 
     <div className={`App ${theme}`}>

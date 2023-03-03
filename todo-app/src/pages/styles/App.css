@@ -2,3 +2,11 @@
     flex  : 1; /* Drives height */
     width : 100%; /* Width might not be needed, depending on rules applied to the parent */
 }
+h2{
+    text-align: center;
+}
+.settingBtn{
+    margin: auto;
+    position: relative;
+    left: 46%;
+}
