@@ -30,7 +30,7 @@ export default function AddEvent() {
     try {
       await axios.post('/TODO/v1/myforms', newFormDocument)
       alert('Success')
-    } catch(err) {
+    } catch(err){
       console.log(err)
       console.log('Error')
     }
@@ -60,7 +60,8 @@ export default function AddEvent() {
       <br/>
       <label>
         Category:
-        <select value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value})}>
+        <select value={formData.category}  onChange={(e) => setFormData({ ...formData, category: e.target.value})}>
+          {/* defaultValue='Personal' */}
           <option value="Personal">Personal</option>
           <option value="Family">Family</option>
           <option value="Career">Career</option>
