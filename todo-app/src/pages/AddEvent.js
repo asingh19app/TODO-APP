@@ -8,12 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function AddEvent() {
   console.error()
-  const [theme, setTheme] = useState(localStorage.getItem('theme'))
-}
-const navigate = useNavigate()
-import './styles/form.css'
-
-export default function AddEvent() {
+  const navigate = useNavigate()
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
   const [startTime, setStartTime] = useState('');
