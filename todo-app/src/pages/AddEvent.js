@@ -6,6 +6,8 @@ import './styles/form.css'
 import { useNavigate } from 'react-router-dom'
 
 export default function AddEvent() {
+  
+  const api = process.env.API_URL;
   const navigate = useNavigate()
   const [theme] = useState(localStorage.getItem('theme'))
   const [formData, setFormData] = useState({
@@ -28,11 +30,13 @@ export default function AddEvent() {
     }
 
     try {
-      await axios.post('/TODO/v1/myforms', newFormDocument)
-      alert('Success')
+      await axios.post(`http://localhost:3000/`, newFormDocument)
+      .then(response => {
+        console.log("sent successfully")
+    })
     } catch(err){
       console.log(err)
-      console.log('Error')
+      // console.error()
     }
 
     navigate('/')

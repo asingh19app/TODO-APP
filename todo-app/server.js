@@ -3,10 +3,10 @@ const express = require('express');
 const app = express();
 require('dotenv/config');
 const api = process.env.API_URL;
-const formRouter = require('../controllers/form')
+const formRouter = require('./controllers/myforms')
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const contactRouter = require('../controllers/contact')
+const contactRouter = require('./controllers/contact')
 
 const cors = require('cors')
 app.use(cors())
