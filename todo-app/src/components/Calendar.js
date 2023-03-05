@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 import '@mobiscroll/react/dist/css/mobiscroll.min.css';
-import { Eventcalendar, Popup, Input, CalendarNav, CalendarPrev, CalendarNext, CalendarToday, getJson, formatDate  } from '@mobiscroll/react';
+import { Eventcalendar, toast, Popup, Input, CalendarNav, CalendarPrev, CalendarNext, CalendarToday, getJson, formatDate  } from '@mobiscroll/react';
 
 export default function Calendar() {
     const [theme] = useState(localStorage.getItem('theme'));
@@ -87,6 +87,18 @@ export default function Calendar() {
         setOpen(false);
     }, []);
     
+    // const onEventClick = React.useCallback((event) => {
+    //     toast({
+    //         message: event.event.title
+    //     });
+    // }, []);
+
+    // const view = React.useMemo(() => {
+    //     return {
+    //         calendar: { popover: true, count: true }
+    //     };
+    // }, []);
+    
     const eventClick = React.useCallback((args) => {
         setCurrentDate(args.event.start);
         setSelectedEvent([args.event]);
@@ -99,10 +111,10 @@ export default function Calendar() {
                 theme="ios" 
                 themeVariant={theme}
                 className="md-search-events"
-                clickToCreate={false}
-                dragToCreate={false}
-                dragToMove={false}
-                dragToResize={false}
+                clickToCreate={true}
+                dragToCreate={true}
+                dragToMove={true}
+                dragToResize={true}
                 selectMultipleEvents={true}
                 view={calView}
                 data={calEvents}
@@ -183,7 +195,7 @@ export default function Calendar() {
 //             }
 //         }, 200);
 //     }, []);
-
+//  Tried to implement extra things but rejected
     
 //     // const timezones = React.useMemo(() => {
 //     //     return [{
