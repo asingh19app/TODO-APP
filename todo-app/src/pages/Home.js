@@ -12,6 +12,6 @@ const [theme] = useState(localStorage.getItem('theme'))
     <div className={`App ${theme}`}>
       <NavigationBar />
       <Calendar/>
-  </div>
+    </div>
   )
 }
