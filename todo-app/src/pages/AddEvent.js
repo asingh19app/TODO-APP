@@ -5,9 +5,7 @@ import NavBar from '../components/NavBar';
 import './styles/form.css'
 import { useNavigate } from 'react-router-dom'
 
-
 export default function AddEvent() {
-  console.error()
   const navigate = useNavigate()
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
@@ -16,7 +14,6 @@ export default function AddEvent() {
   const [category, setCategory] = useState('')
   const [note, setNote] = useState('');
   const [theme] = useState(localStorage.getItem('theme'))
-
   const [formData, setFormData] = useState({
     title: '',
     startTime: '',
