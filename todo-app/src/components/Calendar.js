@@ -99,10 +99,10 @@ export default function Calendar() {
                 theme="ios" 
                 themeVariant={theme}
                 className="md-search-events"
-                clickToCreate={false}
-                dragToCreate={false}
-                dragToMove={false}
-                dragToResize={false}
+                clickToCreate={true}
+                dragToCreate={true}
+                dragToMove={true}
+                dragToResize={true}
                 selectMultipleEvents={true}
                 view={calView}
                 data={calEvents}
