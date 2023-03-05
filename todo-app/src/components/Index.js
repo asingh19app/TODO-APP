@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import '../pages/styles/Index.css'
 
 export default function Index() {
     const [eventDatabase, setDatabase] =useState([])
@@ -13,16 +14,21 @@ export default function Index() {
 
   return (<>
     <div>Index</div>
+    <div className='list'>
     {eventDatabase.map(e1 =>{
         return(
-            <li key={e1.id}>
-                {e1.title}, {e1.startTime}, {e1.endTime}, {e1.category}, {e1.notes}
-            </li>
+            <div className='eventDate'>
+                <li key={e1.id}>
+                    <li>Title: {e1.title}</li>
+                    <li>Start Time: {e1.startTime}</li>
+                    <li>End Time :{e1.endTime}</li>
+                    <li>Category :{e1.category}</li>
+                    <li>Notes: {e1.notes}</li>
+                </li>
+            </div>
         )
     })}
-    <ul>
-
-    </ul>
+    </div>
     </>
   )
 }

@@ -1,0 +1,9 @@
+.eventDate{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    color: red;
+    text-align: center;
+    border: 1px solid black;
+    width: 25vw;
+}
