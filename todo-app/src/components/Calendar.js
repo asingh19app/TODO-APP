@@ -181,16 +181,16 @@ import { Eventcalendar, Popup, Input, CalendarNav, CalendarPrev, CalendarNext, C
 
 export default function Calendar() {
     const [theme] = useState(localStorage.getItem('theme'));
-    const [calEvents, setCalEvents] = React.useState([]);
-    const [listEvents, setListEvents] = React.useState([]);
-    const [mySelectedEvent, setSelectedEvent] = React.useState([]);
-    const [isOpen, setOpen] = React.useState(false);
-    const [currentDate, setCurrentDate] = React.useState(new Date());
-    const [searchInput, setSearchInput] = React.useState(null);
-    const inputRef = React.useRef();
-    const timerRef = React.useRef(null);
+    const [calEvents, setCalEvents] = useState([]);
+    const [listEvents, setListEvents] = useState([]);
+    const [mySelectedEvent, setSelectedEvent] = useState([]);
+    const [isOpen, setOpen] = useState(false);
+    const [currentDate, setCurrentDate] = useState(new Date());
+    const [searchInput, setSearchInput] = useState(null);
+    const inputRef = useRef();
+    const timerRef = useRef(null);
     
-    const calView = React.useMemo(() => {
+    const calView = useMemo(() => {
         return {
             calendar: {
                 labels: true
@@ -255,15 +255,15 @@ export default function Calendar() {
         });
     }, []);
     
-    const popupInit = React.useCallback(() => {
+    const popupInit = useCallback(() => {
         setSearchInput(inputRef.current.nativeElement);
     }, []);
     
-    const popupClose = React.useCallback(() => {
+    const popupClose = useCallback(() => {
         setOpen(false);
     }, []);
     
-    const eventClick = React.useCallback((args) => {
+    const eventClick = useCallback((args) => {
         setCurrentDate(args.event.start);
         setSelectedEvent([args.event]);
         setOpen(false);
