@@ -6,6 +6,7 @@ const api = process.env.API_URL;
 const formRouter = require('../controllers/form')
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const contactRouter = require('../controllers/contact')
 
 const cors = require('cors')
 app.use(cors())
@@ -17,6 +18,7 @@ app.use(morgan('tiny'))
 
 //routers
 app.use(`${api}/myforms`, formRouter)
+app.use(`${api}/contact`, contactRouter)
 
 //mongoose connect
 mongoose.connect(process.env.PROFILE_CONNECTION)
