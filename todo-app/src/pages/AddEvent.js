@@ -14,7 +14,11 @@ export default function AddEvent() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    
   }
+
+  
   return (
     <div className={`App ${theme}`}>
     <NavBar/>
