@@ -7,12 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function AddEvent() {
   const navigate = useNavigate()
-  const [title, setTitle] = useState('');
-  const [date, setDate] = useState('');
-  const [startTime, setStartTime] = useState('');
-  const [endTime, setEndTime] = useState('');
-  const [category, setCategory] = useState('')
-  const [note, setNote] = useState('');
+
   const [theme] = useState(localStorage.getItem('theme'))
   const [formData, setFormData] = useState({
     title: '',
