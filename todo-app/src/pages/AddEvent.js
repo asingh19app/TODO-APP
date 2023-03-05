@@ -28,10 +28,11 @@ export default function AddEvent() {
     }
 
     try {
-      await axios.post('/TODO/v1/myforms', newFormDocument)
+      await axios.post('http://localhost:5000/TODO/v1/myforms', newFormDocument)
       alert('Success')
-    } catch {
-      console.log('Error')
+    } catch (err){
+      console.log(err)
+      // console.error()
     }
 
     navigate('/')
