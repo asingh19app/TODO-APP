@@ -29,7 +29,8 @@ mongoose.connect(process.env.PROFILE_CONNECTION)
 mongoose.set('strictQuery', false);
 
 app.listen(3000, () => {
-    console.log(api);
-    console.log('sever running');
+    // console.log(process.env.PROFILE_CONNECTION)
+    // console.log(api);
+    console.log('server running');
 })
 
