@@ -10,15 +10,17 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import AddEvent from './pages/AddEvent';
 import { useState, useEffect } from 'react';
 
+import Index from './components/Index';
+
 //Application
 function App() {
 const [theme]  =useState(localStorage.getItem('theme') || 'light')
+const [eventDatabase, setDatabase] =useState([])
 
 useEffect(()=>{
   document.body.className =theme
   // document.getElementById()
 }, [theme])
-
 
  return(
   <div className={`App ${theme}`}>
@@ -31,7 +33,7 @@ useEffect(()=>{
           <Route path='/addevent' element={<AddEvent/>}/>  
         </Routes>
       </Router>
-
+     <Index />
     </div>
  )
 }
