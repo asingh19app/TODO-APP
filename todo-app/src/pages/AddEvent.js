@@ -2,18 +2,11 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from 'react';
 import NavBar from '../components/NavBar';
-<<<<<<< HEAD
-import '../form.css'
+import './styles/form.css'
 import { useNavigate } from 'react-router-dom'
 
-
 export default function AddEvent() {
-
   const navigate = useNavigate()
-=======
-import './styles/form.css'
-
-export default function AddEvent() {
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
   const [startTime, setStartTime] = useState('');
@@ -21,8 +14,6 @@ export default function AddEvent() {
   const [category, setCategory] = useState('')
   const [note, setNote] = useState('');
   const [theme] = useState(localStorage.getItem('theme'))
->>>>>>> development
-
   const [formData, setFormData] = useState({
     title: '',
     startTime: '',
