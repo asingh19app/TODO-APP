@@ -14,7 +14,6 @@ export default function AddEvent() {
   const [category, setCategory] = useState('')
   const [note, setNote] = useState('');
   const [theme] = useState(localStorage.getItem('theme'))
-
   const [formData, setFormData] = useState({
     title: '',
     startTime: '',
