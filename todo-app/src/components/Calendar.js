@@ -3,10 +3,6 @@ import React, { useState } from 'react'
 import '@mobiscroll/react/dist/css/mobiscroll.min.css';
 import { Eventcalendar, snackbar, setOptions, Popup, Button, Input, Textarea, Switch, Datepicker, SegmentedGroup, SegmentedItem } from '@mobiscroll/react';
 
-setOptions({
-    theme: 'ios',
-    themeVariant: 'light'
-});
 
 const now = new Date();
 const defaultEvents = [{
@@ -68,6 +64,7 @@ const colorPopup = {
 const colors = ['#ffeb3c', '#ff9900', '#f44437', '#ea1e63', '#9c26b0', '#3f51b5', '', '#009788', '#4baf4f', '#7e5d4e'];
 
 export default function Calendar () {
+    const [theme] = useState(localStorage.getItem('theme'));
     const [myEvents, setMyEvents] = React.useState(defaultEvents);
     const [tempEvent, setTempEvent] = React.useState(null);
     const [isOpen, setOpen] = React.useState(false);
@@ -291,6 +288,8 @@ export default function Calendar () {
 
     return <div>
         <Eventcalendar
+           theme="ios" 
+           themeVariant={theme}
             view={viewSettings}
             data={myEvents}
             clickToCreate="double"

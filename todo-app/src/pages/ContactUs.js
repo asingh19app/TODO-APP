@@ -38,7 +38,8 @@ export default function ContactUs() {
   return (
     <div className={`App ${theme}`}>
     <NavBar/>
-    <h1>Add Event Here:</h1>
+    <h1>Contact Us:</h1>
+    <h1>If you have any questions or need help, please fill out the form below</h1>
     <form onSubmit={handleSubmit}>
       <label>
         Name:
