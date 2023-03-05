@@ -9,8 +9,18 @@ import { useNavigate } from 'react-router-dom'
 export default function AddEvent() {
   console.error()
   const [theme, setTheme] = useState(localStorage.getItem('theme'))
-
+}
 const navigate = useNavigate()
+import './styles/form.css'
+
+export default function AddEvent() {
+  const [title, setTitle] = useState('');
+  const [date, setDate] = useState('');
+  const [startTime, setStartTime] = useState('');
+  const [endTime, setEndTime] = useState('');
+  const [category, setCategory] = useState('')
+  const [note, setNote] = useState('');
+  const [theme] = useState(localStorage.getItem('theme'))
 
   const [formData, setFormData] = useState({
     title: '',
@@ -64,10 +74,10 @@ const navigate = useNavigate()
       <label>
         Category:
         <select value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value})}>
-          <option value="category1">Personal</option>
-          <option value="category2">Family</option>
-          <option value="category3">Career</option>
-          <option value="category4">School</option>
+          <option value="Personal">Personal</option>
+          <option value="Family">Family</option>
+          <option value="Career">Career</option>
+          <option value="School">School</option>
         </select>
       </label>
       <br/>
@@ -78,6 +88,7 @@ const navigate = useNavigate()
       <br/>
       <button className = 'submitButton' type="submit">Submit</button>
     </form>
-  </div>
+</div>
   );
 }
+
