@@ -6,6 +6,10 @@ const formSchema = new mongoose.Schema({
         default: '', 
         required: true, 
     },
+    date:{
+        type: Date,
+        required: true
+    },
     startTime: {
         type: Date,
     },

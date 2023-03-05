@@ -7,16 +7,11 @@ import { useNavigate } from 'react-router-dom'
 
 export default function AddEvent() {
   const navigate = useNavigate()
-  const [title, setTitle] = useState('');
-  const [date, setDate] = useState('');
-  const [startTime, setStartTime] = useState('');
-  const [endTime, setEndTime] = useState('');
-  const [category, setCategory] = useState('')
-  const [note, setNote] = useState('');
   const [theme] = useState(localStorage.getItem('theme'))
 
   const [formData, setFormData] = useState({
     title: '',
+    date: '',
     startTime: '',
     endTime: '',
     category: '',
@@ -28,6 +23,7 @@ export default function AddEvent() {
 
     const newFormDocument = {
       title: formData.title,
+      date: formData.date,
       startTime: formData.startTime,
       endTime: formData.endTime,
       category: formData.category,
@@ -55,13 +51,18 @@ export default function AddEvent() {
       </label>
       <br/>
       <label>
+        Date:
+        <input type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value})} />
+      </label>
+      <br/>
+      <label>
         Start Time
-        <input type="text" value={formData.startTime} onChange={(e) => setFormData({ ...formData, startTime: e.target.value})} />
+        <input type="time" value={formData.startTime} onChange={(e) => setFormData({ ...formData, startTime: e.target.value})} />
       </label>
       <br/>
       <label>
         End Time:
-        <input type="text" value={formData.endTime} onChange={(e) => setFormData({ ...formData, endTime: e.target.value})} />
+        <input type="time" value={formData.endTime} onChange={(e) => setFormData({ ...formData, endTime: e.target.value})} />
       </label>
       <br/>
       <label>

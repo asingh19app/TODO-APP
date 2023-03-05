@@ -178,7 +178,7 @@
 import React, { useState } from 'react'
 import '@mobiscroll/react/dist/css/mobiscroll.min.css';
 import { Eventcalendar, Popup, Input, CalendarNav, CalendarPrev, CalendarNext, CalendarToday, getJson, formatDate  } from '@mobiscroll/react';
-
+const seed = './seeder/event_seeder.js'
 export default function Calendar() {
     const [theme] = useState(localStorage.getItem('theme'));
     const [calEvents, setCalEvents] = React.useState([]);
@@ -247,9 +247,9 @@ export default function Calendar() {
     const onPageLoading =  React.useCallback((args) => {
         const start = formatDate('YYYY-MM-DD', args.viewStart);
         const end = formatDate('YYYY-MM-DD', args.viewEnd);
-        //Poplate calendar
+        //Populate calendar
         setTimeout(() => {
-            getJson('https://trial.mobiscroll.com/searchevents/?start=' + start + '&end=' + end, (data) => {
+            getJson(seed + start + '&end=' + end, (data) => {
                 setCalEvents(data);
             }, 'jsonp');
         });
