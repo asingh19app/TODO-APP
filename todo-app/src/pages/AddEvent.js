@@ -6,7 +6,10 @@ import './styles/form.css'
 import { useNavigate } from 'react-router-dom'
 
 export default function AddEvent() {
+  
+  const api = process.env.API_URL;
   const navigate = useNavigate()
+
   const [theme] = useState(localStorage.getItem('theme'))
   const [formData, setFormData] = useState({
     title: '',
@@ -62,7 +65,8 @@ export default function AddEvent() {
       <br/>
       <label>
         Category:
-        <select value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value})}>
+        <select value={formData.category}  onChange={(e) => setFormData({ ...formData, category: e.target.value})}>
+          {/* defaultValue='Personal' */}
           <option value="Personal">Personal</option>
           <option value="Family">Family</option>
           <option value="Career">Career</option>

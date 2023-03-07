@@ -3,10 +3,10 @@ const express = require('express');
 const app = express();
 require('dotenv/config');
 const api = process.env.API_URL;
-const formRouter = require('../controllers/myforms')
+const formRouter = require('./controllers/myforms')
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const contactRouter = require('../controllers/contact')
+const contactRouter = require('./controllers/contact')
 
 const cors = require('cors')
 app.use(cors())
@@ -30,8 +30,9 @@ mongoose.connect(process.env.PROFILE_CONNECTION)
 })
 mongoose.set('strictQuery', false);
 
-app.listen(5000, () => {
-    console.log(api);
+app.listen(3000, () => {
+    // console.log(process.env.PROFILE_CONNECTION)
+    // console.log(api);
     console.log('server running');
 })
 
