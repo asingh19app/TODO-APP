@@ -15,7 +15,6 @@ export default function AddEvent() {
     category: '',
     note: '',
   })
-
   const handleSubmit = async (event) => {
     event.preventDefault()
 
@@ -28,7 +27,7 @@ export default function AddEvent() {
     }
 
     try {
-      await axios.post('http://localhost:5000/TODO/v1/myforms', newFormDocument)
+      await axios.get('http://localhost:5000/TODO/v1/myforms', newFormDocument)
       alert('Success')
     } catch (err){
       console.log(err)
@@ -50,12 +49,15 @@ export default function AddEvent() {
       <br/>
       <label>
         Start Time
-        <input type="text" value={formData.startTime} onChange={(e) => setFormData({ ...formData, startTime: e.target.value})} />
+        {/* Constructed date object from formdata => parsed to iso string then slicing the milliseconds to match format  */}
+        <input type="datetime-local" value={formData.startTime} onChange={(e) => setFormData({ ...formData, startTime:new Date(e.target.value).toISOString().slice(0,16)})}
+         />
+
       </label>
       <br/>
       <label>
         End Time:
-        <input type="text" value={formData.endTime} onChange={(e) => setFormData({ ...formData, endTime: e.target.value})} />
+        <input type="datetime-local" value={formData.endTime} onChange={(e) => setFormData({ ...formData, endTime: new Date(e.target.value).toISOString().slice(0,16)})} />
       </label>
       <br/>
       <label>
