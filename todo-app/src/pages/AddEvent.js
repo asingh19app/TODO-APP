@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function AddEvent() {
   const navigate = useNavigate()
+
   const [theme] = useState(localStorage.getItem('theme'))
   const [formData, setFormData] = useState({
     title: '',
