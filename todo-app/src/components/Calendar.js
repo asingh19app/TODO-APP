@@ -423,7 +423,7 @@ export default function Calendar () {
 //             }
 //         }, 200);
 //     }, []);
-
+//  Tried to implement extra things but rejected
     
 //     // const timezones = React.useMemo(() => {
 //     //     return [{

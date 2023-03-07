@@ -9,6 +9,7 @@ export default function AddEvent() {
   
   const api = process.env.API_URL;
   const navigate = useNavigate()
+
   const [theme] = useState(localStorage.getItem('theme'))
   const [formData, setFormData] = useState({
     title: '',
@@ -30,11 +31,9 @@ export default function AddEvent() {
     }
 
     try {
-      await axios.post(`http://localhost:3000/`, newFormDocument)
-      .then(response => {
-        console.log("sent successfully")
-    })
-    } catch(err){
+      await axios.post('http://localhost:5000/TODO/v1/myforms', newFormDocument)
+      alert('Success')
+    } catch (err){
       console.log(err)
       // console.error()
     }
