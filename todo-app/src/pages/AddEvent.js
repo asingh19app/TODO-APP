@@ -29,7 +29,7 @@ export default function AddEvent() {
     }
 
     try {
-      await axios.post('/TODO/v1/myforms', newFormDocument)
+      await axios.get('/TODO/v1/myforms', newFormDocument)
       alert('Success')
     } catch {
       console.log('Error')
