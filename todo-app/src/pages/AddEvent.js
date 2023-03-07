@@ -30,7 +30,7 @@ export default function AddEvent() {
     }
 
     try {
-      await axios.get('http://localhost:5000/TODO/v1/myforms', newFormDocument)
+      await axios.get('http://localhost:5000/TODO/v1/forms', newFormDocument)
       alert('Success')
     } catch (err){
       console.log(err)

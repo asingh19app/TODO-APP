@@ -1,5 +1,3 @@
-import mongoose from 'mongoose'
-
 const mongoose = require('mongoose')
 
 const myformsschema = new mongoose.Schema({
@@ -24,4 +22,4 @@ const myformsschema = new mongoose.Schema({
         required: true},
 })
   
-exports.myforms = mongoose.model('myforms', myformsschema)
+exports.Forms = mongoose.model('myforms', myformsschema)
