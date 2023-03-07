@@ -23,12 +23,11 @@ function useMongoDB() {
 export default function Home() {
   const data = useMongoDB();
 
+  return (
     <div className={`App ${theme}`}>
       <NavigationBar />
       <Calendar/>
-    </div>
-  )
-  return (
+  
     <div>
       {data.map(item => (
         <div key={item._id}>
@@ -37,5 +36,6 @@ export default function Home() {
         </div>
       ))}
     </div>
+  </div>
   );
 }
