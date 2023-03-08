@@ -5,46 +5,45 @@ import axios from 'axios'
 import '@mobiscroll/react/dist/css/mobiscroll.min.css';
 import { Eventcalendar, snackbar, setOptions, Popup, Button, Input, Textarea, Switch, Datepicker, SegmentedGroup, SegmentedItem } from '@mobiscroll/react';
 
-
 const now = new Date();
 let userEvents;
-// const defaultEvents = [{
-//     id: 1,
-//     start: '2023-03-08T13:00',
-//     end: '2023-03-08T13:45',
-//     title: 'Lunch @ Butcher\'s',
-//     description: '',
-//     allDay: false,
-//     free: true,
-//     color: '#009788'
-// }, {
-//     id: 2,
-//     start: '2023-03-05T15:00',
-//     end: '2023-03-05T16:00',
-//     title: 'General orientation',
-//     description: '',
-//     allDay: false,
-//     free: false,
-//     color: '#ff9900'
-// }, {
-//     id: 3,
-//     start: '2023-03-04T18:00',
-//     end: '2023-03-04T22:00',
-//     title: 'Dexter BD',
-//     description: '',
-//     allDay: false,
-//     free: true,
-//     color: '#3f51b5'
-// }, {
-//     id: 4,
-//     start: '2023-03-06T10:30',
-//     end: '2023-03-06T11:30',
-//     title: 'Stakeholder mtg.',
-//     description: '',
-//     allDay: false,
-//     free: false,
-//     color: '#f44437'
-// }];
+const defaultEvents = [{
+    id: 1,
+    start: '2023-03-08T13:00',
+    end: '2023-03-08T13:45',
+    title: 'Lunch @ Butcher\'s',
+    description: '',
+    allDay: false,
+    free: true,
+    color: '#009788'
+}, {
+    id: 2,
+    start: '2023-03-05T15:00',
+    end: '2023-03-05T16:00',
+    title: 'General orientation',
+    description: '',
+    allDay: false,
+    free: false,
+    color: '#ff9900'
+}, {
+    id: 3,
+    start: '2023-03-04T18:00',
+    end: '2023-03-04T22:00',
+    title: 'Dexter BD',
+    description: '',
+    allDay: false,
+    free: true,
+    color: '#3f51b5'
+}, {
+    id: 4,
+    start: '2023-03-06T10:30',
+    end: '2023-03-06T11:30',
+    title: 'Stakeholder mtg.',
+    description: '',
+    allDay: false,
+    free: false,
+    color: '#f44437'
+}];
 
 const viewSettings = {
     calendar: { labels: true }
@@ -69,9 +68,9 @@ const colors = ['#ffeb3c', '#ff9900', '#f44437', '#ea1e63', '#9c26b0', '#3f51b5'
 export default function Calendar () {
  const [eventDatabase, setDatabase] =useState([])
   useEffect(() => {
-    axios.get('http://localhost:5000/TODO/v1/myforms').then(res => {
+    axios.get('http://localhost:5000/TODO/forms').then(res => {
     //   console.log(res.data)
-      userEvents= res.data
+      defaultEvents= res.data
       console.log("userEvents")
 console.log(userEvents[2])
       //   setDatabase(res.data)  
@@ -80,7 +79,7 @@ console.log(userEvents[2])
 
     
     const [theme] = useState(localStorage.getItem('theme'));
-    const [myEvents, setMyEvents] = React.useState(userEvents);
+    const [myEvents, setMyEvents] = React.useState(defaultEvents);
     const [tempEvent, setTempEvent] = React.useState(null);
     const [isOpen, setOpen] = React.useState(false);
     const [isEdit, setEdit] = React.useState(false);

@@ -1,12 +1,8 @@
-const mongoose = require('mongoose')
-const uniqueValidator = require('mongoose-unique-validator');
+// import mongoose from 'mongoose'
 
-const myformsschema = new mongoose.Schema({
-    id: {
-        type: mongoose.Types.ObjectId,
-        default: mongoose.Types.ObjectId,
-        unique: true
-    },
+const mongoose = require('mongoose')
+
+const formSchema = new mongoose.Schema({
     title: { 
         type: String, 
         default: '', 
@@ -27,7 +23,5 @@ const myformsschema = new mongoose.Schema({
         default: '',
         required: true},
 })
-
-myformsschema.plugin(uniqueValidator);
   
-exports.Form = mongoose.model('myforms2', myformsschema)
+exports.Forms = mongoose.model('Form', formSchema)
