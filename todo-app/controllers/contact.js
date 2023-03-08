@@ -2,7 +2,7 @@ const {Contacts} = require('../models/contact');
 const express = require('express');
 const router = express.Router();
 
-router.get('/contact', async (req,res) => {
+router.get('/', async (req,res) => {
     const contactList = await Contacts.find()
 
     if(!contactList) {
@@ -11,11 +11,11 @@ router.get('/contact', async (req,res) => {
     res.send(contactList);
 })
 
-router.post('/contact', async (req, res) => {
+router.post('/', async (req, res) => {
     let contact = new Contacts({
-        title: req.body.name,
+        name: req.body.name,
         email: req.body.email,
-        phoneNumber: req.body.number,
+        number: req.body.number,
         note: req.body.note,
     })
 

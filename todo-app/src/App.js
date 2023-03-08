@@ -35,7 +35,7 @@ useEffect(()=>{
           <Route path='/deleteevent' element={<DeleteEvent />} /> 
         </Routes>
       </Router>
-     <Index />
+     {/* <Index /> */}
     </div>
  )
 }
