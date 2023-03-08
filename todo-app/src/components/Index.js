@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import '../pages/styles/Index.css'
 
 export default function Index() {
-    const [eventDatabase, setDatabase] =useState([])
+    const [eventDatabase, setDatabase] = useState([])
   useEffect(() => {
     axios.get('http://localhost:5000/TODO/v1/form').then(res => {
       console.log(res.data)
@@ -23,13 +23,13 @@ export default function Index() {
                     <br />
                     Title: {e1.title}
                     <br/>
-                    Start Time: {e1.startTime}
+                    Start Time: {e1.start}
                     <br/>
-                    End Time :{e1.endTime}
+                    End Time :{e1.end}
                     <br/>
-                    Category :{e1.category}
+                    Description :{e1.description}
                     <br/>
-                    Notes: {e1.notes}
+                    Color: {e1.color}
                     <br/>
                 </ul>
             </div>

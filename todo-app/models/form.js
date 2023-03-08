@@ -3,25 +3,34 @@
 const mongoose = require('mongoose')
 
 const formSchema = new mongoose.Schema({
+    start: {
+        type: Date,
+    },
+    end: {
+        type: Date,
+    },
     title: { 
         type: String, 
         default: '', 
         required: true, 
     },
-    startTime: {
-        type: Date,
-    },
-    endTime: {
-        type: Date,
-    },
-    category: {
+    description: {
         type: String,
         default: '',
+        required: true
     },
-    note: {
+    allDay: {
+        type: Boolean,
+        default: false,
+    },
+    free: {
+        type: Boolean,
+        default: false,
+    },
+    color: {
         type: String,
-        default: '',
-        required: true},
+        default: '#ff9900',
+    }
 })
   
 exports.Forms = mongoose.model('Form', formSchema)

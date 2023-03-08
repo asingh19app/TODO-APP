@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import axios from 'axios'
 import '@mobiscroll/react/dist/css/mobiscroll.min.css';
 import { Eventcalendar, snackbar, setOptions, Popup, Button, Input, Textarea, Switch, Datepicker, SegmentedGroup, SegmentedItem } from '@mobiscroll/react';
+import MyComponent from './PopulateCalender';
 
 const now = new Date();
 let userEvents;
@@ -66,20 +67,26 @@ const colorPopup = {
 const colors = ['#ffeb3c', '#ff9900', '#f44437', '#ea1e63', '#9c26b0', '#3f51b5', '', '#009788', '#4baf4f', '#7e5d4e'];
 
 export default function Calendar () {
- const [eventDatabase, setDatabase] =useState([])
-  useEffect(() => {
-    axios.get('http://localhost:5000/TODO/forms').then(res => {
-    //   console.log(res.data)
-      defaultEvents= res.data
-      console.log("userEvents")
-console.log(userEvents[2])
-      //   setDatabase(res.data)  
-    })
-  }, [])
+ 
+    //const [myArray, setMyArray] = useState([]);
+    const [myEvents, setMyEvents] = React.useState(defaultEvents);
+
+    useEffect(() => {
+      async function fetchData() {
+          try {
+            const response = await axios.get('http://localhost:5000/TODO/v1/form'); 
+            setMyEvents(response.data);
+          } catch (error) {
+            console.error(error);
+          }
+        }
+        fetchData();
+  
+    }, [])
 
     
     const [theme] = useState(localStorage.getItem('theme'));
-    const [myEvents, setMyEvents] = React.useState(defaultEvents);
+    //const [myEvents, setMyEvents] = React.useState(defaultEvents);
     const [tempEvent, setTempEvent] = React.useState(null);
     const [isOpen, setOpen] = React.useState(false);
     const [isEdit, setEdit] = React.useState(false);

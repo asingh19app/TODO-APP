@@ -13,11 +13,13 @@ router.get('/', async (req,res) => {
 
 router.post('/', async (req, res) => {
     let form = new Forms({
+        start: req.body.start,
+        end: req.body.end,
         title: req.body.title,
-        startTime: req.body.startTime,
-        endTime: req.body.endTime,
-        category: req.body.category,
-        note: req.body.note,
+        description: req.body.description,
+        allDay: req.body.allDay,
+        free: req.body.free,
+        color: req.body.color,
     })
 
     form = await form.save();
