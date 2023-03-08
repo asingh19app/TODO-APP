@@ -6,6 +6,7 @@ import './styles/form.css'
 import { useNavigate } from 'react-router-dom'
 
 export default function ContactUs() {
+  const api = process.env.API_URL
   const navigate = useNavigate()
   const [theme] = useState(localStorage.getItem('theme'))
   const [contactData, setContactData] = useState({
@@ -21,15 +22,15 @@ export default function ContactUs() {
     const newContactDocument = {
       name: contactData.name,
       email: contactData.email,
-      phoneNumber: contactData.phoneNumber,
+      number: contactData.number,
       note: contactData.note
     }
 
     try {
       await axios.post('http://localhost:5000/TODO/v1/contact', newContactDocument)
       alert('Success')
-    } catch {
-      console.log('Error')
+    } catch(err) {
+      console.log(err)
     }
 
     navigate('/')
@@ -43,7 +44,7 @@ export default function ContactUs() {
     <form onSubmit={handleSubmit}>
       <label>
         Name:
-        <input type="text" value={contactData.title} onChange={(e) => setContactData({ ...contactData, name: e.target.value})} />
+        <input type="text" value={contactData.name} onChange={(e) => setContactData({ ...contactData, name: e.target.value})} />
       </label>
       <br/>
       <label>
@@ -54,8 +55,7 @@ export default function ContactUs() {
       <label>
         Phone Number:
         <input type="tel" id="phone" name="phone"
-       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-       required value={contactData.endTime} onChange={(e) => setContactData({ ...contactData, phoneNumber: e.target.value})} />
+       required value={contactData.number} onChange={(e) => setContactData({ ...contactData, number: e.target.value})} />
       </label>
       <br/>
       <label>
