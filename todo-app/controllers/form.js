@@ -1,4 +1,4 @@
-const {Forms} = require('../models/forms');
+const {Forms} = require('../models/form');
 const express = require('express');
 const router = express.Router();
 
@@ -6,7 +6,7 @@ router.get('/', async (req,res) => {
     const formList = await Forms.find()
 
     if(!formList) {
-        res.status(500).json({succss: flase})
+        res.status(500).json({success: false})
     }
     res.send(formList);
 })

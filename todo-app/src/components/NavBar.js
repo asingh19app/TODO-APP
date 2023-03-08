@@ -19,9 +19,9 @@ export default function NavBar() {
             <LinkContainer to='/' onClick={()=> window.location.reload}>
               <Nav.Link>Home</Nav.Link>
             </LinkContainer>
-            <LinkContainer to='/profilepage' onClick={()=> window.location.reload}>           
+            {/* <LinkContainer to='/profilepage' onClick={()=> window.location.reload}>           
               <Nav.Link>Profile Page</Nav.Link>
-            </LinkContainer>
+            </LinkContainer> */}
             <LinkContainer to='/contactus' onClick={()=> window.location.reload}>
               <Nav.Link>Contact Us</Nav.Link>
             </LinkContainer>

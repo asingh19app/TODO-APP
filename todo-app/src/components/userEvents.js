@@ -11,11 +11,11 @@ let userEvents;
 // },
 
   const [formData, setFormData] = useState({
-    title: '',
+    id: "",
     start: '',
     end: '',
+    title: '',
     category: '',
-    id: 1,
     description: '',
     allDay: false,
     free: true,
@@ -43,16 +43,22 @@ let userEvents;
         type: String,
         default: '',
         required: true},
+        
     allDay: {
-        requiredfalse},    
-})
+        required: true},  
+    free: {
+        required: true},   
+    id: {
+        required: true},    
+}       
+)
   
 
 
     const loadPopupForm = React.useCallback((event) => {
         setTitle(event.title);
-        setDescription(event.note);
-        setDate([event.startTime, event.end]);
+        setDescription(event.description);
+        setDate([event.start, event.end]);
         setAllDay(event.allDay || false);
         setStatus(event.status || 'busy');
         setSelectedColor(event.color || '');
