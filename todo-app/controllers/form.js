@@ -1,4 +1,4 @@
-const {Forms} = require('../models/myforms.js');
+const {Forms} = require('../models/form.js');
 const express = require('express');
 const router = express.Router();
 
