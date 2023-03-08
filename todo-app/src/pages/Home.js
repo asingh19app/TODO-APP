@@ -4,24 +4,24 @@ import NavigationBar from '../components/NavBar'
 import Calendar from '../components/Calendar'
 import axios from 'axios';
 
-function useMongoDB() {
-  const [data, setData] = useState([]);
+// function useMongoDB() {
+//   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get('/TODO/v1/myforms');
-      setData(result.data);
-    };
+//   // useEffect(() => {
+//   //   const fetchData = async () => {
+//   //     const result = await axios.get('/TODO/v1/myforms');
+//   //     setData(result.data);
+//   //   };
 
-    fetchData();
-  }, []);
+//   //   fetchData();
+//   // }, []);
 
-  return data;
-}
-
+//   return data;
+// }
+// 
 
 export default function Home() {
-  const data = useMongoDB();
+  // const data = useMongoDB();
   const [theme] = useState(localStorage.getItem('theme'))
 
   return (
@@ -29,14 +29,14 @@ export default function Home() {
       <NavigationBar />
       <Calendar/>
   
-    <div>
-      {data.map(item => (
+    {/* <div> */}
+      {/* {data.map(item => (
         <div key={item._id}>
           <h2>{item.title}</h2>
           <p>{item.description}</p>
         </div>
       ))}
-    </div>
+    </div> */}
   </div>
   );
 }
