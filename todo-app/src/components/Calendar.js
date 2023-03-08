@@ -8,43 +8,43 @@ import { Eventcalendar, snackbar, setOptions, Popup, Button, Input, Textarea, Sw
 
 const now = new Date();
 let userEvents;
-// const defaultEvents = [{
-//     id: 1,
-//     start: '2023-03-08T13:00',
-//     end: '2023-03-08T13:45',
-//     title: 'Lunch @ Butcher\'s',
-//     description: '',
-//     allDay: false,
-//     free: true,
-//     color: '#009788'
-// }, {
-//     id: 2,
-//     start: '2023-03-05T15:00',
-//     end: '2023-03-05T16:00',
-//     title: 'General orientation',
-//     description: '',
-//     allDay: false,
-//     free: false,
-//     color: '#ff9900'
-// }, {
-//     id: 3,
-//     start: '2023-03-04T18:00',
-//     end: '2023-03-04T22:00',
-//     title: 'Dexter BD',
-//     description: '',
-//     allDay: false,
-//     free: true,
-//     color: '#3f51b5'
-// }, {
-//     id: 4,
-//     start: '2023-03-06T10:30',
-//     end: '2023-03-06T11:30',
-//     title: 'Stakeholder mtg.',
-//     description: '',
-//     allDay: false,
-//     free: false,
-//     color: '#f44437'
-// }];
+const defaultEvents = [{
+    id: 1,
+    start: '2023-03-08T13:00',
+    end: '2023-03-08T13:45',
+    title: 'Lunch @ Butcher\'s',
+    description: '',
+    allDay: false,
+    free: true,
+    color: '#009788'
+}, {
+    id: 2,
+    start: '2023-03-05T15:00',
+    end: '2023-03-05T16:00',
+    title: 'General orientation',
+    description: '',
+    allDay: false,
+    free: false,
+    color: '#ff9900'
+}, {
+    id: 3,
+    start: '2023-03-04T18:00',
+    end: '2023-03-04T22:00',
+    title: 'Dexter BD',
+    description: '',
+    allDay: false,
+    free: true,
+    color: '#3f51b5'
+}, {
+    id: 4,
+    start: '2023-03-06T10:30',
+    end: '2023-03-06T11:30',
+    title: 'Stakeholder mtg.',
+    description: '',
+    allDay: false,
+    free: false,
+    color: '#f44437'
+}];
 
 const viewSettings = {
     calendar: { labels: true }
@@ -71,7 +71,7 @@ export default function Calendar () {
   useEffect(() => {
     axios.get('http://localhost:5000/TODO/v1/myforms').then(res => {
     //   console.log(res.data)
-      userEvents= res.data
+      defaultEvents= res.data
       console.log("userEvents")
 console.log(userEvents[2])
       //   setDatabase(res.data)  
