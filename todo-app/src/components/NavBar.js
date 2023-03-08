@@ -31,6 +31,9 @@ export default function NavBar() {
             <LinkContainer to="/addevent" onClick={()=> window.location.reload}>
               <Nav.Link>Add Event</Nav.Link>
             </LinkContainer>
+            <LinkContainer to='/deleteevent' onClick={()=> window.location.reload}>
+              <Nav.Link> Delete Event</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>

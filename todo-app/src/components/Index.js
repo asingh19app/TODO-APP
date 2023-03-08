@@ -6,7 +6,7 @@ import '../pages/styles/Index.css'
 export default function Index() {
     const [eventDatabase, setDatabase] =useState([])
   useEffect(() => {
-    axios.get('http://localhost:5000/TODO/v1/forms').then(res => {
+    axios.get('http://localhost:5000/TODO/v1/form').then(res => {
       console.log(res.data)
       setDatabase(res.data)
     })
@@ -19,6 +19,8 @@ export default function Index() {
         return(
             <div className='eventDate'>
                 <ul key={e1.id}>
+                    ID: {e1._id}
+                    <br />
                     Title: {e1.title}
                     <br/>
                     Start Time: {e1.startTime}

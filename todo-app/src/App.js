@@ -11,6 +11,7 @@ import AddEvent from './pages/AddEvent';
 import { useState, useEffect } from 'react';
 
 import Index from './components/Index';
+import DeleteEvent from './pages/DeleteEvent';
 
 //Application
 function App() {
@@ -30,7 +31,8 @@ useEffect(()=>{
           <Route path='/settings' element={<Settings/>} />
           <Route path='/contactus' element={<ContactUs />} />
           <Route path='/profilepage' element={<ProfilePage />} />  
-          <Route path='/addevent' element={<AddEvent/>}/>  
+          <Route path='/addevent' element={<AddEvent/>}/> 
+          <Route path='/deleteevent' element={<DeleteEvent />} /> 
         </Routes>
       </Router>
      <Index />
