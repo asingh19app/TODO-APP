@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const myformsschema = new mongoose.Schema({
+const formSchema = new mongoose.Schema({
     title: { 
         type: String, 
         default: '', 
@@ -22,4 +22,4 @@ const myformsschema = new mongoose.Schema({
         required: true},
 })
   
-exports.Forms = mongoose.model('myforms', myformsschema)
+exports.Forms = mongoose.model('Form', formSchema)
