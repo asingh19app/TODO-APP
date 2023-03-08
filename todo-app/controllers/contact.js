@@ -1,4 +1,4 @@
-const {Contacts} = require('../models/contactUs');
+const {Contacts} = require('../models/contact');
 const express = require('express');
 const router = express.Router();
 
@@ -11,7 +11,7 @@ router.get('/contact', async (req,res) => {
     res.send(contactList);
 })
 
-router.post('/', async (req, res) => {
+router.post('/contact', async (req, res) => {
     let contact = new Contacts({
         title: req.body.name,
         email: req.body.email,

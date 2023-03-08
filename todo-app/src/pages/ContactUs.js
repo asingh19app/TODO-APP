@@ -26,7 +26,7 @@ export default function ContactUs() {
     }
 
     try {
-      await axios.post('/TODO/v1/contact', newContactDocument)
+      await axios.post('http://localhost:5000/TODO/v1/contact', newContactDocument)
       alert('Success')
     } catch {
       console.log('Error')
