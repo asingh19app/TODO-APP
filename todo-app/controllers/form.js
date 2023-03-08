@@ -28,5 +28,17 @@ router.post('/', async (req, res) => {
     return res.status(400).send('the form cannot be created!')
     res.send(form);
 })
+//delete
+router.delete('/:id', (req, res) => {
+    Forms.findOneAndRemove(req.params.id).then(form => {
+        if(form) {
+            return res.status(200).json({success: true, message: 'the form is deleted!'})
+        } else {
+            return res.status(404).json({success: false , message: "form not found!"})
+        }
+    }).catch(err=>{
+        return res.status(500).json({success: false, error: err}) 
+     })
+})
 
 module.exports = router;
