@@ -1,47 +1,50 @@
 
 import React, { useState } from 'react'
+import { useEffect } from 'react'
+import axios from 'axios'
 import '@mobiscroll/react/dist/css/mobiscroll.min.css';
 import { Eventcalendar, snackbar, setOptions, Popup, Button, Input, Textarea, Switch, Datepicker, SegmentedGroup, SegmentedItem } from '@mobiscroll/react';
 
 
 const now = new Date();
-const defaultEvents = [{
-    id: 1,
-    start: '2023-03-08T13:00',
-    end: '2023-03-08T13:45',
-    title: 'Lunch @ Butcher\'s',
-    description: '',
-    allDay: false,
-    free: true,
-    color: '#009788'
-}, {
-    id: 2,
-    start: '2023-03-05T15:00',
-    end: '2023-03-05T16:00',
-    title: 'General orientation',
-    description: '',
-    allDay: false,
-    free: false,
-    color: '#ff9900'
-}, {
-    id: 3,
-    start: '2023-03-04T18:00',
-    end: '2023-03-04T22:00',
-    title: 'Dexter BD',
-    description: '',
-    allDay: false,
-    free: true,
-    color: '#3f51b5'
-}, {
-    id: 4,
-    start: '2023-03-06T10:30',
-    end: '2023-03-06T11:30',
-    title: 'Stakeholder mtg.',
-    description: '',
-    allDay: false,
-    free: false,
-    color: '#f44437'
-}];
+let userEvents;
+// const defaultEvents = [{
+//     id: 1,
+//     start: '2023-03-08T13:00',
+//     end: '2023-03-08T13:45',
+//     title: 'Lunch @ Butcher\'s',
+//     description: '',
+//     allDay: false,
+//     free: true,
+//     color: '#009788'
+// }, {
+//     id: 2,
+//     start: '2023-03-05T15:00',
+//     end: '2023-03-05T16:00',
+//     title: 'General orientation',
+//     description: '',
+//     allDay: false,
+//     free: false,
+//     color: '#ff9900'
+// }, {
+//     id: 3,
+//     start: '2023-03-04T18:00',
+//     end: '2023-03-04T22:00',
+//     title: 'Dexter BD',
+//     description: '',
+//     allDay: false,
+//     free: true,
+//     color: '#3f51b5'
+// }, {
+//     id: 4,
+//     start: '2023-03-06T10:30',
+//     end: '2023-03-06T11:30',
+//     title: 'Stakeholder mtg.',
+//     description: '',
+//     allDay: false,
+//     free: false,
+//     color: '#f44437'
+// }];
 
 const viewSettings = {
     calendar: { labels: true }
@@ -64,8 +67,20 @@ const colorPopup = {
 const colors = ['#ffeb3c', '#ff9900', '#f44437', '#ea1e63', '#9c26b0', '#3f51b5', '', '#009788', '#4baf4f', '#7e5d4e'];
 
 export default function Calendar () {
+ const [eventDatabase, setDatabase] =useState([])
+  useEffect(() => {
+    axios.get('http://localhost:5000/TODO/v1/myforms').then(res => {
+    //   console.log(res.data)
+      userEvents= res.data
+      console.log("userEvents")
+console.log(userEvents[2])
+      //   setDatabase(res.data)  
+    })
+  }, [])
+
+    
     const [theme] = useState(localStorage.getItem('theme'));
-    const [myEvents, setMyEvents] = React.useState(defaultEvents);
+    const [myEvents, setMyEvents] = React.useState(userEvents);
     const [tempEvent, setTempEvent] = React.useState(null);
     const [isOpen, setOpen] = React.useState(false);
     const [isEdit, setEdit] = React.useState(false);
@@ -100,9 +115,9 @@ export default function Calendar () {
         const newEvent = {
             id: tempEvent.id,
             title: popupEventTitle,
-            description: popupEventDescription,
-            start: popupEventDate[0],
-            end: popupEventDate[1],
+            note: popupEventDescription,
+            startTime: popupEventDate[0],
+            endTime: popupEventDate[1],
             allDay: popupEventAllDay,
             status: popupEventStatus,
             color: tempEvent.color,
@@ -145,8 +160,8 @@ export default function Calendar () {
 
     const loadPopupForm = React.useCallback((event) => {
         setTitle(event.title);
-        setDescription(event.description);
-        setDate([event.start, event.end]);
+        setDescription(event.note);
+        setDate([event.startTime, event.end]);
         setAllDay(event.allDay || false);
         setStatus(event.status || 'busy');
         setSelectedColor(event.color || '');

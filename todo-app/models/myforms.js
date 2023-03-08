@@ -22,4 +22,4 @@ const myformsschema = new mongoose.Schema({
         required: true},
 })
   
-exports.myforms = mongoose.model('myforms', myformsschema)
+exports.Forms = mongoose.model('myforms', myformsschema)
