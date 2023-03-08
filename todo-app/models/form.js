@@ -32,5 +32,13 @@ const formSchema = new mongoose.Schema({
         default: '#ff9900',
     }
 })
+
+formSchema.virtual('id').get(function () {
+    return this._id.toHexString();
+});
+
+formSchema.set('toJSON', {
+    virtuals: true,
+});
   
 exports.Forms = mongoose.model('Form', formSchema)
