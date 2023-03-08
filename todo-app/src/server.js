@@ -55,7 +55,7 @@ app.use(express.json())
 app.use(morgan('tiny'))
 
 //routers
-app.use(`${api}/forms`, formRouter)
+app.use(`${api}/form`, formRouter)
 app.use(`${api}/contact`, contactRouter)
 
 //mongoose connect
