@@ -15,33 +15,30 @@
 
 ## Project Description 
 
-This project will be a MERN stack application that will focus working with React and MongoDB. The TODO app will display a calendar that the user will be able to interact with. The user will be able to add tasks per day in accordance with time. 
+This project will be a MERN stack application that will focus working with React and MongoDB. The TODO app will display a calendar that the user will be able to interact with. The user will be able to add tasks on any day in accordance to time. 
 
 ## App Logic
 
-The TODO app will display a calendar that the user will be able to interact with it utilizing an imported library format calendar. We will implement functionality for the user to add tasks per day in accordance to time into the calendar. The app will display a calendar that will have a '+' button indicating to add a task, this will pull up a React card on screen. The user will then be able to enter their task and pick a time of when they should start or end the task(this can be interepted in different ways) and will push it to the calendar by clicking on the 'Done' button at the bottom of the React card. There will be utilizations of GET/PUT routes that will work with card to push the task entries on the calendar. Once the user adds the card, the information should be added to a MongoDB database that holds the user input data(task entries). Once the task is added to the calendar there will be three buttons for the user to use. The first button will be a green check button, once clicked on, it will cross out the task in green and have a green check next to it. The second button will be a red x button, once clicked, it will cross out the task in red and have a red x next to it. The last button will be a delete button, indicated with a garabage logo, it will delete the task despite it being completed, not completed, or left alone. The calendar should be able to display a few words of the task with the buttons overlaping towards the end of the sentence
+The TODO app has four main parts: the first is the Add Event page which guides the user to a form indicating to add the title, start day and start time, end day and end time, category, and note for their task/event. This page utilizes the GET and POST routes which shows the form, and pushes the form's entries to mongoDB. Once submitted, there will be a popup indicating to the user that the submission was successful. Then they will be redirected to the main screen with the calendar, and the title they inserted in the form will be displayed on the calendar. The second main part is the Delete Event. This function will have a dropdown to select the tasks by title and a delete button to delete the task off the calendar and database. The third main part is a the Settings page and this allows the user to change the background of the app by clicking on the toggle button. The last function is the Contact Us page, and this page also utilizes the GET/POST routes as it shows the user the form asking for name, email, phone number, and comment. Once the user submits the page, the information is pushed to the database, and a popup shows up saying the submission was sucessful and it redirects them to the main page.
 
 
 ## MVP
-- Calendar will display
+- Calendar should appear as user opens the app.
 
-- Once user clicks on '+' button they will be brought to React card and will be able to enter the task
+- The navigation should have the four main parts of the app Add Event, Contact Us, Settings, Delete Event.
 
-- Once the click on the 'Done' button on the React card the entry should push on the calendar
+- Once user clicks on Add Event link, it should take them to the Add Event page in which a form appears, and once user submits the form, a popup should showup indicating success. The user should be redirected to main page and see their inputed title on calendar in accordance to inputed time.
 
-- The calendar should display task entries and three buttons next to it.
+- Once user clicks on Settings link, it should take them to Settings page, and they should be able to toggle dark mode.
 
-- Check button should cross out task in green and have check next to it
+- Once user clicks on Contact Us link, it should take them to Contact Us page, and they should be able to submit the form and see a popup saying the submission was successful, and it should redirect them to the main page
 
-- X button should cross out task in red and have an x to it.
+- Once user clicks on Delete Event link, it should take them to Delete Event page, and they should be able to see a dropdown with all the inputed titles, and once the chose the desired title and click the delete button the title is delete from the dropdown and calendar.
 
-- Garbage button should delete task regardless of status of completion or not.
+- This app should keep track of user inputed data of Add Event, Contact Us, and Delete Event entires and submit it to the database.
 
 
 ## Post-MVP
-
-This app should keep track of user inputed data of task entries
-
 - Added security to site
 
 - Make it mobile with React Native
