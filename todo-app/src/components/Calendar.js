@@ -314,9 +314,9 @@ export default function Calendar () {
             view={viewSettings}
             data={myEvents}
             clickToCreate="double"
-            dragToCreate={false}
-            dragToMove={false}
-            dragToResize={false}
+            dragToCreate={true}
+            dragToMove={true}
+            dragToResize={true}
             selectedDate={mySelectedDate}
             onSelectedDateChange={onSelectedDateChange}
             onEventClick={onEventClick}
