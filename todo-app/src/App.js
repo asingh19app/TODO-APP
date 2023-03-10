@@ -26,6 +26,7 @@ useEffect(()=>{
 
  return(
   <div className={`App ${theme}`}>
+    
       <Router>  
         <Routes>
           <Route path='/' element={<Home />} />

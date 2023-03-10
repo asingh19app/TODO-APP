@@ -7,6 +7,8 @@ export default function DeleteEvent() {
   const [myOptions, setMyOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState('');
 
+  const [theme, setTheme] = useState(localStorage.getItem('theme'))
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -32,7 +34,7 @@ export default function DeleteEvent() {
   return (
     <>
     <NavBar/>        
-          <div>
+          <div className={`App ${theme}`}>
               <h1>Delete Events</h1>
               <form>
                 <div>
